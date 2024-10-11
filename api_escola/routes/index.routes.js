@@ -1,8 +1,11 @@
-const express = require("express");
-const alunoRouter = require("./aluno.router")
+const express = require('express');
+const alunoRouter = require('./aluno.router')
+const professorRouter = require('./professor.router');
+const salaRouter = require ('./sala.router')
 
-const routes = aluno.Router();
 
-routes.use("/alunos", alunoRouter);
+const routes = express.Router();
 
-module.exports = routes;
+routes.use("/aluno", alunoRouter);
+routes.use("/professor", professorRouter);
+routes.use("/sala", salaRouter);
