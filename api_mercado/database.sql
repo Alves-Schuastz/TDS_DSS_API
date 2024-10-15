@@ -13,13 +13,14 @@ CREATE TABLE cliente(
     status BOOLEAN DEFAULT TRUE
 );
 
-CREATE TABLE pedido{
+CREATE TABLE pedido(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
-    PRIMARY KEY(id_cliente),
     FOREIGN KEY(id_cliente) REFERENCES cliente(id),
 
     id_produto INT NOT NULL,
-    PRIMARY KEY(id_produto),
     FOREIGN KEY(id_produto) REFERENCES produto(id),
-};
+
+    quantidade INT,
+    total DECIMAL(9,2)
+);
